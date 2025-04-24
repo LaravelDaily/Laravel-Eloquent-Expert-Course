@@ -11,3 +11,5 @@ Route::get('/', function () {
         'birth_date' => '01/25/1990',
     ]);
 });
+
+Route::get('/statuses', \App\Http\Controllers\UserController::class);

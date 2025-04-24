@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Ghost;
+use App\Models\Network;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,5 +22,9 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
             'birth_date' => '01/25/1990',
         ]);
+
+        User::factory(3000)->create();
+        Network::factory(1000)->create();
+        Ghost::factory(1000)->create();
     }
 }
