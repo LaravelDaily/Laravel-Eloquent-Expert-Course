@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Attributes\ScopedBy;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Attributes\Scope;
 
 //#[ScopedBy([VerifiedScope::class])]
 class User extends Authenticatable
@@ -63,6 +64,12 @@ class User extends Authenticatable
     {
         $query->whereNotNull('email_verified_at');
     }
+
+    // #[Scope]
+    // public function verified(Builder $query): void
+    // {
+    //     $query->whereNotNull('email_verified_at');
+    // }
 
     public function scopeTypeOf(Builder $query, string $type): void
     {
