@@ -66,7 +66,7 @@ class User extends Authenticatable
     }
 
     // #[Scope]
-    // public function verified(Builder $query): void
+    // protected function verified(Builder $query): void
     // {
     //     $query->whereNotNull('email_verified_at');
     // }
