@@ -59,9 +59,9 @@ class User extends Authenticatable
 //        static::addGlobalScope(new VerifiedScope);
     }
 
-    public function scopeVerified(Builder $query): Builder
+    public function scopeVerified(Builder $query): void
     {
-        return $query->whereNotNull('email_verified_at');
+        $query->whereNotNull('email_verified_at');
     }
 
     public function scopeTypeOf(Builder $query, string $type): void
